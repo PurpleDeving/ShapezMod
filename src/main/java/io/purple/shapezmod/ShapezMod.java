@@ -31,7 +31,7 @@ public class ShapezMod
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final DependMod SZMod = new DependMod(MODID); // This mods information bus in PL
+    public static final DependMod PLMod = new DependMod(MODID); // This mods information bus in PL
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -40,8 +40,11 @@ public class ShapezMod
 
         PLRegistry.init();  // 1. Make sure the Registries exist. Not strictly needed, depending on load order
         SZBaseItems.init(); // 2. Create all the items and register them to the registries
+        SZBaseBlocks.init();
                             // 3. Registry the registries > happens exclusively inside PL
 
+        // Setup a creative tab icon for a tab with all items of this mod. Handling in PL
+        PLMod.getCtManager().addCreativeTabIcon(PLMod.getIManager().getItem("testname"));
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

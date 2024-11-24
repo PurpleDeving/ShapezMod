@@ -1,18 +1,16 @@
 package io.purple.shapezmod;
 
-import io.purple.purplelib.dependency.DependMod;
-import io.purple.purplelib.item.BasicItem;
 import net.minecraft.world.item.Item;
 
-import static io.purple.purplelib.registry.PLRegistry.ITEMS;
-import static io.purple.shapezmod.ShapezMod.SZMod;
+
+import static io.purple.shapezmod.ShapezMod.PLMod;
 
 public class SZBaseItems {
 
     public static void init(){
 
 
+        PLMod.getIManager().addBasicItem("testname", new Item.Properties());
 
-        BasicItem.addBasicItem(SZMod,"testname", new Item.Properties());
     }
 }
