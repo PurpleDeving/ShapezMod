@@ -30,6 +30,17 @@ repositories {
     maven {
         url = uri("${project.rootDir}/../maven-repo")
     }
+    // CurseMaven to add most mods
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 base {
@@ -136,10 +147,15 @@ dependencies {
     // The group id is ignored when searching -- in this case, it is "blank"
     implementation "io.purple:purplelib-${mc_version}:${purplelib_version}"
 
+
+    // Try to add the Skyblock mod to dev Enivorment
+    //localRuntime "maven.modrinth:skyblocker-936169:5687691"
+
     // Example mod dependency using a file as dependency
-    // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
+    implementation files("libs/standard-skyblock-2.0.2.jar")
 
     // Example project dependency using a sister or child project:
+
     // implementation project(":myproject")
 
     // For more info:

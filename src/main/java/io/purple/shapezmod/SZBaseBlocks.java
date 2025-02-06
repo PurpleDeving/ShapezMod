@@ -1,6 +1,7 @@
 package io.purple.shapezmod;
 
 import io.purple.purplelib.multiblock.ControllerBlock;
+import io.purple.shapezmod.multiblocks.gravitypedestal.GravityPedestalController;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,6 +16,7 @@ public class SZBaseBlocks {
         BlockBehaviour.Properties defaultProps = BlockBehaviour.Properties.of();
 
         PLMod.getBManager().addBasicBlock("testblock");
-        PLMod.getBManager().addBasicController("controllerbase");
+        //PLMod.getBManager().addBasicController("controllerbase");
+        PLMod.getBManager().addAdvancedBlock("gravitypedestalcontroller", ()-> new GravityPedestalController(defaultProps));
     }
 }

@@ -41,6 +41,7 @@ public class ShapezMod
         PLRegistry.init();  // 1. Make sure the Registries exist. Not strictly needed, depending on load order
         SZBaseItems.init(); // 2. Create all the items and register them to the registries
         SZBaseBlocks.init();
+        SZBaseBlockEntities.init();
                             // 3. Registry the registries > happens exclusively inside PL
 
         // Setup a creative tab icon for a tab with all items of this mod. Handling in PL
